@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kahoot ENADE - UFERSA</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #46178f; color: white; margin: 0; padding: 20px; text-align: center; }
+    .card { background: white; color: #333; max-width: 600px; margin: 40px auto; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    h1 { margin-top: 0; color: #46178f; }
+    button { background: #26890c; color: white; border: none; padding: 12px 24px; font-size: 18px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 10px; }
+    button:hover { background: #1f6b09; }
+    input { padding: 12px; font-size: 16px; border: 2px solid #ccc; border-radius: 6px; margin: 10px; width: 80%; }
+    .opt-btn { display: block; width: 100%; margin: 10px 0; background: #e21b3c; text-align: left; padding: 15px; font-size: 16px; }
+    .opt-btn:nth-child(2) { background: #1368ce; }
+    .opt-btn:nth-child(3) { background: #d89e00; }
+    .opt-btn:nth-child(4) { background: #26890c; }
+    .opt-btn:nth-child(5) { background: #0542b9; }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="screen-home">
+    <h1>Kahoot ENADE - UFERSA</h1>
+    <p>Simulado Destrava ENADE</p>
+    <button onclick="createRoom()">Criar Sala (Professor/Host)</button>
+    <hr>
+    <h3>Entrar em uma Sala</h3>
+    <input type="text" id="pin" placeholder="Código da Sala (PIN)">
+    <input type="text" id="playerName" placeholder="Seu Nome">
+    <button onclick="joinRoom()">Entrar no Jogo</button>
+  </div>
+
+  <div class="card" id="screen-lobby" style="display:none;">
+    <h2>SALA CRIADA: <span id="room-pin" style="color: #26890c;"></span></h2>
+    <p>Aguardando alunos entrarem...</p>
+    <ul id="player-list" style="list-style: none; padding: 0;"></ul>
+    <button id="start-btn" onclick="startGame()" style="display:none;">Iniciar Quiz</button>
+  </div>
+
+  <div class="card" id="screen-game" style="display:none;">
+    <h3 id="q-number"></h3>
+    <p id="q-text" style="font-size: 18px; text-align: left; white-space: pre-line;"></p>
+    <div id="q-options"></div>
+    <button id="next-btn" onclick="nextQuestion()" style="display:none; margin-top:20px; background:#46178f;">Próxima Questão</button>
+  </div>
+
+  <div class="card" id="screen-results" style="display:none;">
+    <h1>Fim do Quiz ENADE!</h1>
+    <h2>Ranking Final:</h2>
+    <ol id="leaderboard" style="text-align: left; font-size: 20px;"></ol>
+  </div>
+
+  <script>
+    const socket = io();
+    let currentRoom = null;
+    let isHost = false;
+
+    function createRoom() {
+      isHost = true;
+      socket.emit('createRoom');
+    }
+
+    function joinRoom() {
+      const roomId = document.getElementById('pin').value.trim();
+      const name = document.getElementById('playerName').value.trim();
+      if (!roomId || !name) return alert('Preencha o PIN e seu nome!');
+      currentRoom = roomId;
+      socket.emit('joinRoom', { roomId, name });
+    }
+
+    function startGame() {
+      socket.emit('startGame', { roomId: currentRoom });
+    }
+
+    function nextQuestion() {
+      socket.emit('nextQuestion', { roomId: currentRoom });
+    }
+
+    socket.on('roomCreated', ({ roomId }) => {
+      currentRoom = roomId;
+      showScreen('screen-lobby');
+      document.getElementById('room-pin').innerText = roomId;
+      document.getElementById('start-btn').style.display = 'inline-block';
+    });
+
+    socket.on('joinedSuccess', ({ roomId }) => {
+      showScreen('screen-lobby');
+      document.getElementById('room-pin').innerText = roomId;
+    });
+
+    socket.on('updatePlayers', (players) => {
+      const list = document.getElementById('player-list');
+      list.innerHTML = players.map(p => `<li><strong>${p}</strong></li>`).join('');
+    });
+
+    socket.on('newQuestion', (data) => {
+      showScreen('screen-game');
+      document.getElementById('q-number').innerText = `Questão ${data.number} de ${data.total}`;
+      document.getElementById('q-text').innerText = data.enunciado;
+
+      const optsDiv = document.getElementById('q-options');
+      optsDiv.innerHTML = '';
+      
+      data.alternativas.forEach((alt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        btn.innerText = alt;
+        btn.onclick = () => {
+          if (!isHost) {
+            socket.emit('submitAnswer', { roomId: currentRoom, answerIndex: idx });
+            optsDiv.innerHTML = '<h3>Resposta enviada! Aguarde a próxima questão...</h3>';
+          }
+        };
+        optsDiv.appendChild(btn);
+      });
+
+      if (isHost) {
+        document.getElementById('next-btn').style.display = 'inline-block';
+      }
+    });
+
+    socket.on('gameOver', ({ leaderboard }) => {
+      showScreen('screen-results');
+      const board = document.getElementById('leaderboard');
+      board.innerHTML = leaderboard.map(p => `<li>${p.name}: ${p.score} pontos</li>`).join('');
+    });
+
+    socket.on('errorMsg', (msg) => alert(msg));
+
+    function showScreen(id) {
+      ['screen-home', 'screen-lobby', 'screen-game', 'screen-results'].forEach(s => {
+        document.getElementById(s).style.display = (s === id) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

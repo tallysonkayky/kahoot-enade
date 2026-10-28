@@ -1,0 +1,13 @@
+﻿{
+  "name": "kahoot-enade",
+  "version": "1.0.0",
+  "description": "Kahoot para o ENADE UFERSA Pau dos Ferros",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  }
+}

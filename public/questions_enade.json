@@ -1,0 +1,162 @@
+﻿[
+  {
+    "id": "enade_q20_poluicao",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "A poluição atmosférica tem relação direta com o crescimento populacional. Os veículos automotores e as chaminés das indústrias são, respetivamente, as principais fontes poluidoras difusas e estacionárias.\n\nAvalie as afirmações:\nI. O frio e a baixa humidade desfavorecem a dispersão vertical dos poluentes oriundos de fontes estacionárias.\nII. A chuva ácida é causada pela elevada concentração de ácido sulfúrico em água precipitada, fruto da reação química do poluente primário dióxido de enxofre e oxigénio molecular no ar.\nIII. O fenómeno meteorológico de inversão térmica favorece a dispersão vertical de poluentes.\nIV. As fontes difusas ocorrem nos grandes centros urbanos e causam impacto principalmente na alta atmosfera.\n\nÉ correto apenas o que se afirma em:",
+    "alternativas": ["A) III.", "B) IV.", "C) I e II.", "D) I e III.", "E) II e IV."],
+    "resposta_correta": 2
+  },
+  {
+    "id": "enade_q30_solo",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "A contaminação do solo por metais pesados é um dos grandes desafios ambientais que os profissionais da área de engenharia enfrentam. Resíduos domésticos e descartes industriais incorretos acabam contaminando o solo.\n\nUma vez constatada a contaminação do solo por metais pesados, a equipe gestora da área deverá usar a técnica de:",
+    "alternativas": [
+      "A) fitorremediação, que consiste no uso de vegetação para absorção desses poluentes.",
+      "B) injeção de oxigénio úmido no solo, o que causa a oxidação completa desses poluentes.",
+      "C) biorremediação, que é o uso de microrganismos vivos para eliminar os metais pesados.",
+      "D) mobilização in situ, que consiste em lavagem do solo e extração dos poluentes por solvente.",
+      "E) foto-Fenton, que consiste na adição de cátions de ferro no solo e uso de radiação UV."
+    ],
+    "resposta_correta": 0
+  },
+  {
+    "id": "enade_eta_processos",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "Nos sistemas de abastecimento de água, tem-se como objetivo final disponibilizar água potável aos utilizadores de forma contínua, em quantidade e pressão adequadas.\n\nCom relação aos processos e operações unitárias que podem ocorrer em uma ETA para abastecimento público, assinale a opção correta:",
+    "alternativas": [
+      "A) A coagulação envolve a aplicação de produto químico, com a finalidade de reduzir as forças eletrostáticas de repulsão que mantêm separadas as partículas em suspensão, as coloidais e as dissolvidas.",
+      "B) A decantação é a etapa de agitação da água realizada após a coagulação para promover o contacto entre as impurezas.",
+      "C) A estabilização química destina-se a remover contaminantes inorgânicos fazendo a água passar por coluna contendo material resinoso.",
+      "D) A troca iónica tem a finalidade de atenuar efeitos corrosivos ou incrustantes no gradeamento.",
+      "E) O abrandamento é o processo destinado à clarificação e desidratação de lamas."
+    ],
+    "resposta_correta": 0
+  },
+  {
+    "id": "enade_q37_logistica_reversa",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "A Lei n. 12 305/2010 (PNRS) define Logística Reversa como um instrumento de desenvolvimento económico e social caraterizado por um conjunto de ações e meios destinados a viabilizar a recolha e a restituição dos resíduos sólidos ao setor empresarial.\n\nCom relação ao sistema de Logística Reversa, assinale a opção correta:",
+    "alternativas": [
+      "A) Todos os resíduos sólidos estão sujeitos ao sistema de Logística Reversa.",
+      "B) A economia linear e a economia circular são compatíveis com o conceito de Logística Reversa.",
+      "C) As cooperativas de catadores que praticam a economia solidária devem estar inseridas nos sistemas de Logística Reversa.",
+      "D) Os materiais reciclados por catadores não são compatíveis com os objetivos dos sistemas de Logística Reversa.",
+      "E) O retorno de produtos após o uso pelo consumidor deve incluir obrigatoriamente o serviço público de manejo."
+    ],
+    "resposta_correta": 2
+  },
+  {
+    "id": "enade_q31_aia",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "Os métodos de Avaliação de Impacto Ambiental (AIA) dedicam-se a fazer predições dos efeitos de determinado empreendimento a curto, médio e longo prazo.\n\nAssinale a opção em que se descreve corretamente o método identificado:",
+    "alternativas": [
+      "A) Ad hoc: inicia-se com uma reunião de especialistas, para avaliações rápidas, sendo de baixo custo e de alto grau de subjetividade; é elaborado especificamente para cada projeto por meio de brainstorming.",
+      "B) Check-list: listagem de fatores cuja principal vantagem é a identificação de impactos secundários e indiretos.",
+      "C) Matrizes de interação: consistem em uma listagem de controlo bidimensional com a vantagem de não gerar dupla contagem.",
+      "D) Sobreposição de cartas (overlay mapping): útil para estudos espaciais, apresenta como desvantagem a impossibilidade de visualização de fatores ambientais.",
+      "E) Modelos matemáticos: método qualitativo de baixo custo preparatório e simples aplicação."
+    ],
+    "resposta_correta": 0
+  },
+  {
+    "id": "enade_q16_iqa",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "O Índice de Qualidade das Águas (IQA) foi desenvolvido para avaliar a qualidade da água bruta visando o abastecimento público após tratamento.\n\nConsiderando esse contexto, é correto afirmar que são parâmetros avaliados na determinação do IQA:",
+    "alternativas": [
+      "A) oxigénio dissolvido (OD), pH e fósforo total.",
+      "B) turbidez, mercúrio e oxigénio dissolvido (OD).",
+      "C) demanda química de oxigénio (DQO), cádmio e atrazina.",
+      "D) resíduo total, demanda química de oxigénio (DQO) e atrazina.",
+      "E) demanda bioquímica de oxigénio (DBO), chumbo e endosulfan."
+    ],
+    "resposta_correta": 0
+  },
+  {
+    "id": "enade_q19_eutrofizacao",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "O nível de eutrofização de um corpo d'água está relacionado ao aporte de nitrogénio e fósforo oriundo de ações antrópicas.\n\nAvalie as afirmações:\nI. Entre as estratégias para atenuar o processo de eutrofização, pode-se citar: aeração dos corpos hídricos, sombreamento, remoção de macrófitas e algas.\nII. A sedimentação da matéria orgânica provoca predominância de condições aeróbias no fundo do corpo d'água.\nIII. Os esgotos domésticos contêm nitrogénio e fósforo (fezes, urina, detergentes), sendo a sua contribuição superior à originada da drenagem urbana.\n\nÉ correto o que se afirma em:",
+    "alternativas": ["A) I, apenas.", "B) II, apenas.", "C) I e III, apenas.", "D) II e III, apenas.", "E) I, II e III."],
+    "resposta_correta": 2
+  },
+  {
+    "id": "enade_q20_valoracao",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "A OCDE equaciona o Valor Económico Total (VET) como: VET = Valor de Uso (VU) + Valor de Opção (VO) + Valor de Existência (VE).\n\nConsiderando estas informações, assinale a opção em que se exemplifica Valor de Opção (VO):",
+    "alternativas": [
+      "A) Extração de petróleo e de minério.",
+      "B) Visita a parques ecológicos e Área de Proteção Ambiental (APA).",
+      "C) Proteção de solos e lençóis freáticos.",
+      "D) Pesquisa de fármacos de plantas nativas de floresta não explorada.",
+      "E) Animais em extinção, matas e florestas reduzidas ou eliminadas."
+    ],
+    "resposta_correta": 3
+  },
+  {
+    "id": "enade_q13_escudo_termico",
+    "curso": "Engenharia Geral / Materiais",
+    "enunciado": "Os veículos espaciais apresentam estrutura externa constituída por um conjunto de blocos que formam um escudo térmico para proteger motores e componentes do calor.\n\nEsses escudos térmicos são construídos com material:",
+    "alternativas": [
+      "A) metálico, dada sua leveza e elevada resistência ao calor.",
+      "B) polimérico, dada sua baixa resistência ao calor e à corrosão.",
+      "C) cerâmico poroso, dada sua elevada resistência mecânica à tração.",
+      "D) polimérico, em razão de sua alta massa específica e de sua resistência ao calor.",
+      "E) cerâmico poroso, em razão de seu baixo coeficiente de dilatação térmica e de sua baixa condutividade térmica."
+    ],
+    "resposta_correta": 4
+  },
+  {
+    "id": "enade_q15_estatistica",
+    "curso": "Engenharia Geral",
+    "enunciado": "Um programa é executado em 13 etapas, com tempo médio de 50 segundos e dispersão relativa de 10% em torno da média. Um novo algoritmo reduz em 30% o tempo de execução de todas as 13 etapas.\n\nAvalie as afirmações sobre o novo algoritmo:\nI. O tempo médio por etapa será de 32,5 segundos.\nII. O desvio-padrão permanecerá inalterado.\nIII. A dispersão relativa em torno da média permanecerá inalterada.\n\nÉ correto o que se afirma em:",
+    "alternativas": ["A) I, apenas.", "B) III, apenas.", "C) I e II, apenas.", "D) II e III, apenas.", "E) I, II e III."],
+    "resposta_correta": 1
+  },
+  {
+    "id": "enade_q19_hidrograma",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "Para uma chuva de 1h de duração, o Hidrograma Unitário (HU) apresenta vazões ordinárias de 0, 22, 35, 14 e 0 m³/s.mm nos tempos 0, 1, 2, 3 e 4h.\n\nCalculando-se o HU para uma chuva com duas horas de duração e intensidade constante de 2 mm/h, obtém-se a estimativa de pico de vazão, em m³/s, igual a:",
+    "alternativas": ["A) 28.", "B) 44.", "C) 98.", "D) 114.", "E) 149."],
+    "resposta_correta": 3
+  },
+  {
+    "id": "enade_q22_vazao_ecologica",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "Acerca do conceito de vazão mínima ecológica (vazão mínima residual), avalie as afirmações:\n\nI. Elimina o risco de suspensão dos usos outorgados na bacia.\nII. É um valor de referência que deverá ser mantido no trecho de um rio a jusante de um barramento ou captação, visando proteger o ecossistema aquático.\nIII. É definida com base em valores numéricos representativos da quantidade de água que deverá permanecer no rio após as retiradas.\nIV. Garante irrestritamente a qualidade e quantidade no tempo e espaço em 100% dos casos.\n\nÉ correto o que se afirma em:",
+    "alternativas": ["A) IV, apenas.", "B) I e IV, apenas.", "C) II e III, apenas.", "D) I, II e III, apenas.", "E) I, II, III e IV."],
+    "resposta_correta": 2
+  },
+  {
+    "id": "enade_q26_pnrs_prioridade",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "Na gestão e no gerenciamento de resíduos, a sequência de processos, por ordem de prioridade estabelecida na PNRS, é:",
+    "alternativas": [
+      "A) não geração, reutilização, redução, tratamento dos resíduos sólidos, reciclagem e disposição final adequada.",
+      "B) não geração, redução, tratamento dos resíduos sólidos, reciclagem, reutilização e disposição final adequada.",
+      "C) não geração, redução, reutilização, reciclagem, tratamento de resíduos sólidos e disposição final adequada.",
+      "D) não geração, disposição final adequada, tratamento dos resíduos sólidos, reciclagem, redução e reutilização.",
+      "E) não geração, reutilização, tratamento dos resíduos sólidos, disposição final adequada, redução e reciclagem."
+    ],
+    "resposta_correta": 2
+  },
+  {
+    "id": "enade_q27_tanque_detencao",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "Uma bacia de 2 km² com C = 0,5 sofre enchentes. Propôs-se um tanque de detenção com capacidade de 20 000 m³.\n\nAvalie as afirmações:\nI. A construção poderá não apresentar o resultado esperado se medidas como educação ambiental e controlo de ocupação forem negligenciadas.\nII. A construção favorece áreas a jusante pois amortece picos de vazão e facilita a remoção de material flutuante e sólidos por sedimentação.\nIII. Se chover 40 mm em 1h, o volume total precipitado será de 80 000 m³ e o tanque armazenará 50% da água escoada (considerando C=0,5).\n\nÉ correto o que se afirma em:",
+    "alternativas": ["A) I, apenas.", "B) II, apenas.", "C) I e III, apenas.", "D) II e III, apenas.", "E) I, II e III."],
+    "resposta_correta": 4
+  },
+  {
+    "id": "enade_q30_restauracao",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "Restauração ecológica é o processo de auxílio ao restabelecimento de um ecossistema degradado, danificado ou destruído.\n\nAvalie as afirmações:\nI. Para recuperar ecossistemas florestais degradados, recomenda-se a utilização de espécies pioneiras para iniciar a sucessão secundária.\nII. A reabilitação busca a recuperação de uma ou mais funções de um ecossistema degradado.\nIII. A regeneração natural é aplicada a ecossistemas muito degradados com solo de baixa resiliência.\n\nÉ correto o que se afirma em:",
+    "alternativas": ["A) II, apenas.", "B) III, apenas.", "C) I e II, apenas.", "D) I e III, apenas.", "E) I, II e III."],
+    "resposta_correta": 2
+  },
+  {
+    "id": "enade_q29_drenagem_urbana",
+    "curso": "Engenharia Ambiental",
+    "enunciado": "O Plano Diretor de Drenagem Urbana determina a gestão do sistema de drenagem para minimizar o impacto ambiental do escoamento pluvial.\n\nAvalie as afirmações:\nI. O desmatamento e a impermeabilização reduzem a recarga dos aquíferos subterrâneos, o que gera maiores enchentes nos cursos d'água urbanos.\nII. O estudo da bacia hidrográfica em que está inserida a cidade é fundamental para a elaboração do Plano Diretor de Drenagem Urbana.\nIII. O Plano Diretor deve priorizar exclusivamente medidas estruturais, ignorando a participação popular.\n\nÉ correto o que se afirma em:",
+    "alternativas": ["A) I, apenas.", "B) III, apenas.", "C) I e II, apenas.", "D) II e III, apenas.", "E) I, II e III."],
+    "resposta_correta": 2
+  }
+]
