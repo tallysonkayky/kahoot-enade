@@ -1,4 +1,4 @@
-﻿const express = require('express');
+const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const fs = require('fs');
@@ -11,7 +11,7 @@ const io = new Server(server);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Carregar questões do ENADE
-const questions = JSON.parse(fs.readFileSync(path.join(__dirname, 'public', 'questions_enade.json'), 'utf8'));
+const questions = JSON.parse(fs.readFileSync(path.join(__dirname, 'public', 'questions_enade.json'), 'utf8').replace(/^\uFEFF/, ''));
 
 const rooms = {};
 
