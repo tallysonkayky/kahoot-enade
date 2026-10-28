@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -7,16 +7,20 @@
   <script src="/socket.io/socket.io.js"></script>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #46178f; color: white; margin: 0; padding: 20px; text-align: center; }
-    .card { background: white; color: #333; max-width: 600px; margin: 40px auto; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .card { background: white; color: #333; max-width: 700px; margin: 40px auto; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
     h1 { margin-top: 0; color: #46178f; }
-    button { background: #26890c; color: white; border: none; padding: 12px 24px; font-size: 18px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 10px; }
-    button:hover { background: #1f6b09; }
+    button { background: #26890c; color: white; border: none; padding: 12px 24px; font-size: 18px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 10px; transition: 0.2s; }
+    button:hover { filter: brightness(0.9); }
     input { padding: 12px; font-size: 16px; border: 2px solid #ccc; border-radius: 6px; margin: 10px; width: 80%; }
-    .opt-btn { display: block; width: 100%; margin: 10px 0; background: #e21b3c; text-align: left; padding: 15px; font-size: 16px; }
+    .opt-btn { display: block; width: 100%; margin: 10px 0; background: #e21b3c; text-align: left; padding: 15px; font-size: 16px; transition: transform 0.2s; }
     .opt-btn:nth-child(2) { background: #1368ce; }
     .opt-btn:nth-child(3) { background: #d89e00; }
     .opt-btn:nth-child(4) { background: #26890c; }
     .opt-btn:nth-child(5) { background: #0542b9; }
+    .feedback { padding: 20px; border-radius: 8px; color: white; margin-top: 20px; font-size: 18px; }
+    .feedback.correct { background: #26890c; }
+    .feedback.wrong { background: #e21b3c; }
+    .waiting { background: #e2e2e2; color: #333; padding: 20px; border-radius: 8px; }
   </style>
 </head>
 <body>
@@ -27,29 +31,30 @@
     <button onclick="createRoom()">Criar Sala (Professor/Host)</button>
     <hr>
     <h3>Entrar em uma Sala</h3>
-    <input type="text" id="pin" placeholder="Código da Sala (PIN)">
+    <input type="number" id="pin" placeholder="Código da Sala (PIN)">
     <input type="text" id="playerName" placeholder="Seu Nome">
     <button onclick="joinRoom()">Entrar no Jogo</button>
   </div>
 
   <div class="card" id="screen-lobby" style="display:none;">
-    <h2>SALA CRIADA: <span id="room-pin" style="color: #26890c;"></span></h2>
+    <h2>SALA: <span id="room-pin" style="color: #26890c; font-size: 32px;"></span></h2>
     <p>Aguardando alunos entrarem...</p>
-    <ul id="player-list" style="list-style: none; padding: 0;"></ul>
-    <button id="start-btn" onclick="startGame()" style="display:none;">Iniciar Quiz</button>
+    <ul id="player-list" style="list-style: none; padding: 0; font-size: 20px; font-weight: bold;"></ul>
+    <button id="start-btn" onclick="startGame()" style="display:none; background:#46178f;">Iniciar Quiz</button>
   </div>
 
   <div class="card" id="screen-game" style="display:none;">
-    <h3 id="q-number"></h3>
-    <p id="q-text" style="font-size: 18px; text-align: left; white-space: pre-line;"></p>
+    <h3 id="q-number" style="color: #666;"></h3>
+    <p id="q-text" style="font-size: 19px; text-align: left; white-space: pre-line; font-weight: bold;"></p>
     <div id="q-options"></div>
-    <button id="next-btn" onclick="nextQuestion()" style="display:none; margin-top:20px; background:#46178f;">Próxima Questão</button>
+    <button id="reveal-btn" onclick="revealAnswer()" style="display:none; background:#d89e00; width: 100%;">Revelar Resposta</button>
+    <button id="next-btn" onclick="nextQuestion()" style="display:none; background:#46178f; width: 100%;">Próxima Questão</button>
   </div>
 
   <div class="card" id="screen-results" style="display:none;">
     <h1>Fim do Quiz ENADE!</h1>
     <h2>Ranking Final:</h2>
-    <ol id="leaderboard" style="text-align: left; font-size: 20px;"></ol>
+    <ol id="leaderboard" style="text-align: left; font-size: 24px; font-weight: bold; color: #46178f;"></ol>
   </div>
 
   <script>
@@ -57,11 +62,7 @@
     let currentRoom = null;
     let isHost = false;
 
-    function createRoom() {
-      isHost = true;
-      socket.emit('createRoom');
-    }
-
+    function createRoom() { isHost = true; socket.emit('createRoom'); }
     function joinRoom() {
       const roomId = document.getElementById('pin').value.trim();
       const name = document.getElementById('playerName').value.trim();
@@ -69,13 +70,12 @@
       currentRoom = roomId;
       socket.emit('joinRoom', { roomId, name });
     }
-
-    function startGame() {
-      socket.emit('startGame', { roomId: currentRoom });
-    }
-
-    function nextQuestion() {
-      socket.emit('nextQuestion', { roomId: currentRoom });
+    function startGame() { socket.emit('startGame', { roomId: currentRoom }); }
+    function nextQuestion() { socket.emit('nextQuestion', { roomId: currentRoom }); }
+    function revealAnswer() {
+      socket.emit('revealAnswer', { roomId: currentRoom });
+      document.getElementById('reveal-btn').style.display = 'none';
+      document.getElementById('next-btn').style.display = 'inline-block';
     }
 
     socket.on('roomCreated', ({ roomId }) => {
@@ -91,15 +91,13 @@
     });
 
     socket.on('updatePlayers', (players) => {
-      const list = document.getElementById('player-list');
-      list.innerHTML = players.map(p => `<li><strong>${p}</strong></li>`).join('');
+      document.getElementById('player-list').innerHTML = players.map(p => `<li>👤 ${p}</li>`).join('');
     });
 
     socket.on('newQuestion', (data) => {
       showScreen('screen-game');
       document.getElementById('q-number').innerText = `Questão ${data.number} de ${data.total}`;
       document.getElementById('q-text').innerText = data.enunciado;
-
       const optsDiv = document.getElementById('q-options');
       optsDiv.innerHTML = '';
       
@@ -108,23 +106,50 @@
         btn.className = 'opt-btn';
         btn.innerText = alt;
         btn.onclick = () => {
-          if (!isHost) {
-            socket.emit('submitAnswer', { roomId: currentRoom, answerIndex: idx });
-            optsDiv.innerHTML = '<h3>Resposta enviada! Aguarde a próxima questão...</h3>';
-          }
+          if (!isHost) socket.emit('submitAnswer', { roomId: currentRoom, answerIndex: idx });
         };
         optsDiv.appendChild(btn);
       });
 
       if (isHost) {
-        document.getElementById('next-btn').style.display = 'inline-block';
+        document.getElementById('reveal-btn').style.display = 'inline-block';
+        document.getElementById('next-btn').style.display = 'none';
+      }
+    });
+
+    socket.on('answerSubmitted', () => {
+      document.getElementById('q-options').innerHTML = '<div class="waiting"><h3>✔️ Resposta registada!</h3><p>Olhe para a tela do professor para ver a resposta correta.</p></div>';
+    });
+
+    socket.on('answerRevealed', ({ correctIndex }) => {
+      if (isHost) {
+        const btns = document.getElementById('q-options').getElementsByClassName('opt-btn');
+        for (let i = 0; i < btns.length; i++) {
+          if (i === correctIndex) {
+            btns[i].style.background = '#26890c'; // Fica verde
+            btns[i].style.border = '4px solid #fff';
+            btns[i].style.transform = 'scale(1.03)';
+          } else {
+            btns[i].style.opacity = '0.3'; // Apaga as erradas
+          }
+        }
+      }
+    });
+
+    socket.on('playerResult', ({ isCorrect, correctText }) => {
+      if (!isHost) {
+        const optsDiv = document.getElementById('q-options');
+        if (isCorrect) {
+          optsDiv.innerHTML = `<div class="feedback correct"><h2>✔️ Você Acertou!</h2><p>+100 pontos</p></div>`;
+        } else {
+          optsDiv.innerHTML = `<div class="feedback wrong"><h2>❌ Você Errou!</h2><p>A resposta certa era:<br><br><b>${correctText}</b></p></div>`;
+        }
       }
     });
 
     socket.on('gameOver', ({ leaderboard }) => {
       showScreen('screen-results');
-      const board = document.getElementById('leaderboard');
-      board.innerHTML = leaderboard.map(p => `<li>${p.name}: ${p.score} pontos</li>`).join('');
+      document.getElementById('leaderboard').innerHTML = leaderboard.map((p, i) => `<li>${i+1}º - ${p.name} (${p.score} pts)</li>`).join('');
     });
 
     socket.on('errorMsg', (msg) => alert(msg));
