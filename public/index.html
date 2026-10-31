@@ -12,7 +12,7 @@
     button { background: #26890c; color: white; border: none; padding: 12px 24px; font-size: 18px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 10px; transition: 0.2s; }
     button:hover { filter: brightness(0.9); }
     input { padding: 12px; font-size: 16px; border: 2px solid #ccc; border-radius: 6px; margin: 10px; width: 80%; }
-    .opt-btn { display: block; width: 100%; margin: 10px 0; background: #e21b3c; text-align: left; padding: 15px; font-size: 16px; transition: transform 0.2s; }
+    .opt-btn { display: block; width: 100%; margin: 10px 0; background: #e21b3c; text-align: left; padding: 15px; font-size: 16px; transition: transform 0.2s; color: white; border: none; border-radius: 6px; cursor: pointer; }
     .opt-btn:nth-child(2) { background: #1368ce; }
     .opt-btn:nth-child(3) { background: #d89e00; }
     .opt-btn:nth-child(4) { background: #26890c; }
@@ -20,7 +20,7 @@
     .feedback { padding: 20px; border-radius: 8px; color: white; margin-top: 20px; font-size: 18px; }
     .feedback.correct { background: #26890c; }
     .feedback.wrong { background: #e21b3c; }
-    .waiting { background: #e2e2e2; color: #333; padding: 20px; border-radius: 8px; }
+    .waiting { background: #f4f4f9; color: #333; padding: 25px; border-radius: 10px; border: 2px dashed #46178f; }
   </style>
 </head>
 <body>
@@ -106,7 +106,15 @@
         btn.className = 'opt-btn';
         btn.innerText = alt;
         btn.onclick = () => {
-          if (!isHost) socket.emit('submitAnswer', { roomId: currentRoom, answerIndex: idx });
+          if (!isHost) {
+            socket.emit('submitAnswer', { roomId: currentRoom, answerIndex: idx });
+            optsDiv.innerHTML = `
+              <div class="waiting">
+                <h3 style="color: #26890c; margin-top:0;">✔️ Resposta registrada!</h3>
+                <p style="font-size: 17px; margin: 15px 0;">Sua escolha:<br><strong style="font-size: 19px; color: #46178f; display: block; margin-top: 8px;">${alt}</strong></p>
+                <p style="color: #666; font-size: 14px;">Aguarde o professor revelar o gabarito na tela principal.</p>
+              </div>`;
+          }
         };
         optsDiv.appendChild(btn);
       });
@@ -117,20 +125,16 @@
       }
     });
 
-    socket.on('answerSubmitted', () => {
-      document.getElementById('q-options').innerHTML = '<div class="waiting"><h3>✔️ Resposta registada!</h3><p>Olhe para a tela do professor para ver a resposta correta.</p></div>';
-    });
-
     socket.on('answerRevealed', ({ correctIndex }) => {
       if (isHost) {
         const btns = document.getElementById('q-options').getElementsByClassName('opt-btn');
         for (let i = 0; i < btns.length; i++) {
           if (i === correctIndex) {
-            btns[i].style.background = '#26890c'; // Fica verde
+            btns[i].style.background = '#26890c';
             btns[i].style.border = '4px solid #fff';
             btns[i].style.transform = 'scale(1.03)';
           } else {
-            btns[i].style.opacity = '0.3'; // Apaga as erradas
+            btns[i].style.opacity = '0.3';
           }
         }
       }

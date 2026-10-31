@@ -2,7 +2,7 @@
   {
     "id": "enade_q20_poluicao",
     "curso": "Engenharia Ambiental",
-    "enunciado": "A poluição atmosférica tem relação direta com o crescimento populacional. Os veículos automotores e as chaminés das indústrias são, respetivamente, as principais fontes poluidoras difusas e estacionárias.\n\nAvalie as afirmações:\nI. O frio e a baixa humidade desfavorecem a dispersão vertical dos poluentes oriundos de fontes estacionárias.\nII. A chuva ácida é causada pela elevada concentração de ácido sulfúrico em água precipitada, fruto da reação química do poluente primário dióxido de enxofre e oxigénio molecular no ar.\nIII. O fenómeno meteorológico de inversão térmica favorece a dispersão vertical de poluentes.\nIV. As fontes difusas ocorrem nos grandes centros urbanos e causam impacto principalmente na alta atmosfera.\n\nÉ correto apenas o que se afirma em:",
+    "enunciado": "A poluição atmosférica tem relação direta com o crescimento populacional. Os veículos automotores e as chaminés das indústrias são, respectivamente, as principais fontes poluidoras difusas e estacionárias.\n\nAvalie as afirmações:\nI. O frio e a baixa umidade desfavorecem a dispersão vertical dos poluentes oriundos de fontes estacionárias.\nII. A chuva ácida é causada pela elevada concentração de ácido sulfúrico em água precipitada, fruto da reação química do poluente primário dióxido de enxofre e oxigênio molecular no ar.\nIII. O fenômeno meteorológico de inversão térmica favorece a dispersão vertical de poluentes.\nIV. As fontes difusas ocorrem nos grandes centros urbanos e causam impacto principalmente na alta atmosfera.\n\nÉ correto apenas o que se afirma em:",
     "alternativas": ["A) III.", "B) IV.", "C) I e II.", "D) I e III.", "E) II e IV."],
     "resposta_correta": 2
   },
@@ -12,7 +12,7 @@
     "enunciado": "A contaminação do solo por metais pesados é um dos grandes desafios ambientais que os profissionais da área de engenharia enfrentam. Resíduos domésticos e descartes industriais incorretos acabam contaminando o solo.\n\nUma vez constatada a contaminação do solo por metais pesados, a equipe gestora da área deverá usar a técnica de:",
     "alternativas": [
       "A) fitorremediação, que consiste no uso de vegetação para absorção desses poluentes.",
-      "B) injeção de oxigénio úmido no solo, o que causa a oxidação completa desses poluentes.",
+      "B) injeção de oxigênio úmido no solo, o que causa a oxidação completa desses poluentes.",
       "C) biorremediação, que é o uso de microrganismos vivos para eliminar os metais pesados.",
       "D) mobilização in situ, que consiste em lavagem do solo e extração dos poluentes por solvente.",
       "E) foto-Fenton, que consiste na adição de cátions de ferro no solo e uso de radiação UV."
@@ -22,12 +22,12 @@
   {
     "id": "enade_eta_processos",
     "curso": "Engenharia Ambiental",
-    "enunciado": "Nos sistemas de abastecimento de água, tem-se como objetivo final disponibilizar água potável aos utilizadores de forma contínua, em quantidade e pressão adequadas.\n\nCom relação aos processos e operações unitárias que podem ocorrer em uma ETA para abastecimento público, assinale a opção correta:",
+    "enunciado": "Nos sistemas de abastecimento de água, tem-se como objetivo final disponibilizar água potável aos usuários de forma contínua, em quantidade e pressão adequadas.\n\nCom relação aos processos e operações unitárias que podem ocorrer em uma ETA para abastecimento público, assinale a opção correta:",
     "alternativas": [
       "A) A coagulação envolve a aplicação de produto químico, com a finalidade de reduzir as forças eletrostáticas de repulsão que mantêm separadas as partículas em suspensão, as coloidais e as dissolvidas.",
-      "B) A decantação é a etapa de agitação da água realizada após a coagulação para promover o contacto entre as impurezas.",
+      "B) A decantação é a etapa de agitação da água realizada após a coagulação para promover o contato entre as impurezas.",
       "C) A estabilização química destina-se a remover contaminantes inorgânicos fazendo a água passar por coluna contendo material resinoso.",
-      "D) A troca iónica tem a finalidade de atenuar efeitos corrosivos ou incrustantes no gradeamento.",
+      "D) A troca iônica tem a finalidade de atenuar efeitos corrosivos ou incrustantes no gradeamento.",
       "E) O abrandamento é o processo destinado à clarificação e desidratação de lamas."
     ],
     "resposta_correta": 0
@@ -35,7 +35,7 @@
   {
     "id": "enade_q37_logistica_reversa",
     "curso": "Engenharia Ambiental",
-    "enunciado": "A Lei n. 12 305/2010 (PNRS) define Logística Reversa como um instrumento de desenvolvimento económico e social caraterizado por um conjunto de ações e meios destinados a viabilizar a recolha e a restituição dos resíduos sólidos ao setor empresarial.\n\nCom relação ao sistema de Logística Reversa, assinale a opção correta:",
+    "enunciado": "A Lei n. 12 305/2010 (PNRS) define Logística Reversa como um instrumento de desenvolvimento econômico e social caracterizado por um conjunto de ações e meios destinados a viabilizar a coleta e a restituição dos resíduos sólidos ao setor empresarial.\n\nCom relação ao sistema de Logística Reversa, assinale a opção correta:",
     "alternativas": [
       "A) Todos os resíduos sólidos estão sujeitos ao sistema de Logística Reversa.",
       "B) A economia linear e a economia circular são compatíveis com o conceito de Logística Reversa.",
@@ -52,7 +52,7 @@
     "alternativas": [
       "A) Ad hoc: inicia-se com uma reunião de especialistas, para avaliações rápidas, sendo de baixo custo e de alto grau de subjetividade; é elaborado especificamente para cada projeto por meio de brainstorming.",
       "B) Check-list: listagem de fatores cuja principal vantagem é a identificação de impactos secundários e indiretos.",
-      "C) Matrizes de interação: consistem em uma listagem de controlo bidimensional com a vantagem de não gerar dupla contagem.",
+      "C) Matrizes de interação: consistem em uma listagem de controle bidimensional com a vantagem de não gerar dupla contagem.",
       "D) Sobreposição de cartas (overlay mapping): útil para estudos espaciais, apresenta como desvantagem a impossibilidade de visualização de fatores ambientais.",
       "E) Modelos matemáticos: método qualitativo de baixo custo preparatório e simples aplicação."
     ],
@@ -63,11 +63,11 @@
     "curso": "Engenharia Ambiental",
     "enunciado": "O Índice de Qualidade das Águas (IQA) foi desenvolvido para avaliar a qualidade da água bruta visando o abastecimento público após tratamento.\n\nConsiderando esse contexto, é correto afirmar que são parâmetros avaliados na determinação do IQA:",
     "alternativas": [
-      "A) oxigénio dissolvido (OD), pH e fósforo total.",
-      "B) turbidez, mercúrio e oxigénio dissolvido (OD).",
-      "C) demanda química de oxigénio (DQO), cádmio e atrazina.",
-      "D) resíduo total, demanda química de oxigénio (DQO) e atrazina.",
-      "E) demanda bioquímica de oxigénio (DBO), chumbo e endosulfan."
+      "A) oxigênio dissolvido (OD), pH e fósforo total.",
+      "B) turbidez, mercúrio e oxigênio dissolvido (OD).",
+      "C) demanda química de oxigênio (DQO), cádmio e atrazina.",
+      "D) resíduo total, demanda química de oxigênio (DQO) e atrazina.",
+      "E) demanda bioquímica de oxigênio (DBO), chumbo e endosulfan."
     ],
     "resposta_correta": 0
   },
@@ -81,7 +81,7 @@
   {
     "id": "enade_q20_valoracao",
     "curso": "Engenharia Ambiental",
-    "enunciado": "A OCDE equaciona o Valor Económico Total (VET) como: VET = Valor de Uso (VU) + Valor de Opção (VO) + Valor de Existência (VE).\n\nConsiderando estas informações, assinale a opção em que se exemplifica Valor de Opção (VO):",
+    "enunciado": "A OCDE equaciona o Valor econômico Total (VET) como: VET = Valor de Uso (VU) + Valor de Opção (VO) + Valor de Existência (VE).\n\nConsiderando estas informações, assinale a opção em que se exemplifica Valor de Opção (VO):",
     "alternativas": [
       "A) Extração de petróleo e de minério.",
       "B) Visita a parques ecológicos e Área de Proteção Ambiental (APA).",
@@ -141,7 +141,7 @@
   {
     "id": "enade_q27_tanque_detencao",
     "curso": "Engenharia Ambiental",
-    "enunciado": "Uma bacia de 2 km² com C = 0,5 sofre enchentes. Propôs-se um tanque de detenção com capacidade de 20 000 m³.\n\nAvalie as afirmações:\nI. A construção poderá não apresentar o resultado esperado se medidas como educação ambiental e controlo de ocupação forem negligenciadas.\nII. A construção favorece áreas a jusante pois amortece picos de vazão e facilita a remoção de material flutuante e sólidos por sedimentação.\nIII. Se chover 40 mm em 1h, o volume total precipitado será de 80 000 m³ e o tanque armazenará 50% da água escoada (considerando C=0,5).\n\nÉ correto o que se afirma em:",
+    "enunciado": "Uma bacia de 2 km² com C = 0,5 sofre enchentes. Propôs-se um tanque de detenção com capacidade de 20 000 m³.\n\nAvalie as afirmações:\nI. A construção poderá não apresentar o resultado esperado se medidas como educação ambiental e controle de ocupação forem negligenciadas.\nII. A construção favorece áreas a jusante pois amortece picos de vazão e facilita a remoção de material flutuante e sólidos por sedimentação.\nIII. Se chover 40 mm em 1h, o volume total precipitado será de 80 000 m³ e o tanque armazenará 50% da água escoada (considerando C=0,5).\n\nÉ correto o que se afirma em:",
     "alternativas": ["A) I, apenas.", "B) II, apenas.", "C) I e III, apenas.", "D) II e III, apenas.", "E) I, II e III."],
     "resposta_correta": 4
   },
